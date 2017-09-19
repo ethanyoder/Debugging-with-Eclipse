@@ -10,11 +10,22 @@ public class RotateArray {
 
 	public static void main(String[] args) {
 		
+		//creates objects and arrays
 		Scanner sc = new Scanner(System.in);
 		char[] plainAlphabet = new char[26];
+		
 		plainAlphabet = fillArrayAlphabet(plainAlphabet);
+		
+		//prompts user to enter a shift
 		System.out.println("Enter shift amount");
 		int shift = sc.nextInt();
+		sc.close();
+		
+		plainAlphabet = rotate(plainAlphabet, shift);
+		
+		//displays resulting alphabet
+		for (int i = 0; i < 26; i++)
+			System.out.print(plainAlphabet[i]);
 		
 	}
 	
@@ -25,8 +36,12 @@ public class RotateArray {
 		return alphabet;
 	}
 	
-	public static char[] rotate(char[] alphabet) {
-		return null;
+	public static char[] rotate(char[] alphabet, int shift) {
+		char[] methodCopyAlphabet = new char[26];
+		for (int i = 0; i < 26; i++) {
+			methodCopyAlphabet[i] = alphabet[i + shift];
+		}
+		return methodCopyAlphabet;
 	}
 
 }

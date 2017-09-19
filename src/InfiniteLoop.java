@@ -18,6 +18,7 @@ public class InfiniteLoop {
 		
 		//accepts input from the user
 		String input = sc.nextLine();
+		sc.close();
 			
 		//loop runs until user enters "exit" as input
 		while(!input.equals("exit")) {
